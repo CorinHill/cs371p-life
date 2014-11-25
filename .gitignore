@@ -8,4 +8,7 @@
 *.gcda
 *.gcno
 *.gcov
+
+#ignore text and object files
 *.txt
+*.obj
