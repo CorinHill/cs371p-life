@@ -1,0 +1,65 @@
+commit 0aa33f0f415084cadf8733844d48bf6772387781
+Author: Corin Hill <corin@cs.utexas.edu>
+Date:   Wed Nov 26 00:06:06 2014 -0600
+
+    Finished Run harness, fixed off by one age
+
+commit 1de224b04f3b082a142848f50405be28e7a69a2d
+Author: Corin Hill <corin@cs.utexas.edu>
+Date:   Tue Nov 25 21:48:13 2014 -0600
+
+    Added population, updated docs, wrote RunLife
+
+commit c2a33ea3fc27a441e181972157d84b2df2d63df6
+Author: Corin Hill <corin@cs.utexas.edu>
+Date:   Tue Nov 25 21:01:57 2014 -0600
+
+    ran doxygen. closes #17
+
+commit 5e2c8ff1f79951e2379ad2e9958d5982559f6bb0
+Author: Corin Hill <corin@cs.utexas.edu>
+Date:   Tue Nov 25 20:57:10 2014 -0600
+
+    Fixed typos in unit tests, adds test output. Closes #15. Closes #16
+
+commit 9d63896edad2f0acd3a0452f79f719d8018aa40e
+Author: Corin Hill <corin@cs.utexas.edu>
+Date:   Tue Nov 25 20:29:18 2014 -0600
+
+    Closes #14
+
+commit bf9a227dd3b81379900112e7cbedfaf920483adc
+Author: Corin Hill <corin@cs.utexas.edu>
+Date:   Tue Nov 25 20:26:47 2014 -0600
+
+    Unit tests. Closes #3 and #4
+
+commit 7ef08754a584df3c2b88b173914fef20112264cd
+Author: Corin Hill <corin@cs.utexas.edu>
+Date:   Tue Nov 25 00:12:21 2014 -0600
+
+    Fixing pdf
+
+commit 9aafe5b978340e00281f7742236acf31b0f588ed
+Author: Corin <corin.hill@utexase.edu>
+Date:   Tue Nov 25 00:06:59 2014 -0600
+
+    Added uml. Closes #8.
+
+commit 00b63c4a5cde8d0df2b2225c23d240d716f09842
+Author: Corin Hill <corin@cs.utexas.edu>
+Date:   Mon Nov 24 23:23:31 2014 -0600
+
+    Comments. Closes #9
+
+commit 2831fbe470e5898f79c7de70e6105fcedcff6e40
+Author: Corin Hill <corin@cs.utexas.edu>
+Date:   Mon Nov 24 21:48:32 2014 -0600
+
+    Simple solution. Closes #5.
+
+commit 7ac896d3a71524590de057b54e5c6d286a95e4a1
+Author: Corin Hill <corin@cs.utexas.edu>
+Date:   Sun Nov 23 21:39:10 2014 -0600
+
+    Initialize files
