@@ -84,7 +84,7 @@ public:
  * ages a cell given its neighborhood
  * @param n a vector containing a neighborhood
  */
-    virtual void age(const std::vector<AbstractCell>& n) = 0;
+    virtual void age(const std::vector<bool> n) = 0;
 // -----
 //  age
 // -----
@@ -170,10 +170,10 @@ public:
  * ages a Conway cell given its neighborhood
  * @param n a vector containing the neighborhood
  */
-    virtual void age(const std::vector<AbstractCell>& n) {
+    virtual void age(const std::vector<bool> n) {
         int sum = 0;
         for(unsigned i = 0; i < n.size(); ++i ) {
-            if( n[i].isAlive() ) ++sum;
+            if( n[i] ) ++sum;
         }
         age(sum);
     }
@@ -227,8 +227,8 @@ protected:
  * @return the modified stream
  */
     virtual std::ostream& write(std::ostream& out) const {
-        if( _s > 10 ) out << '+';
-        else if(_s)   out << _s;
+        if( _s > 11 ) out << '+';
+        else if(_s)   out << _s-1;
         else          out << '-';
         return out;
     }
@@ -272,12 +272,12 @@ public:
  * ages a Fredkin cell given its neighborhood
  * @param n a vector containing the neighborhood
  */
-    virtual void age(const std::vector<AbstractCell>& n) {
+    virtual void age(const std::vector<bool> n) {
         int sum = 0;
-        if( n[1].isAlive() ) ++sum;
-        if( n[3].isAlive() ) ++sum;
-        if( n[4].isAlive() ) ++sum;
-        if( n[6].isAlive() ) ++sum;
+        if( n[1] ) ++sum;
+        if( n[3] ) ++sum;
+        if( n[4] ) ++sum;
+        if( n[6] ) ++sum;
         age(sum);
     }
 // -----
@@ -309,7 +309,7 @@ public:
  * describes this cells age
  * @return whether this cell has reached adulthood or not (2 turns old)
  */
-    bool isAdult() const { return _s >= 2;}
+    bool isAdult() const { return _s > 2;}
 // ----------
 // destructor
 // ----------
@@ -403,17 +403,17 @@ public:
  * ages the contained cell based on its neighborhood
  * @param n vector representing neighborhood
  */
-    void age(const std::vector<Cell>& n) {
+    void age(const std::vector<bool> n) {
         int sum = 0;
         if( const FredkinCell* const p = dynamic_cast<const FredkinCell*>(_c) ) {
-            if(n[1].isAlive()) ++sum;
-            if(n[3].isAlive()) ++sum;
-            if(n[4].isAlive()) ++sum;
-            if(n[6].isAlive()) ++sum;
+            if(n[1]) ++sum;
+            if(n[3]) ++sum;
+            if(n[4]) ++sum;
+            if(n[6]) ++sum;
         } else
         if( const ConwayCell* const p = dynamic_cast<const ConwayCell*>(_c) ) {
             for(unsigned i = 0; i < n.size(); ++i)
-                if(n[i].isAlive()) ++sum;
+                if(n[i]) ++sum;
         } //else //other subclass of AbstractCell, unknown behavior
 
         age(sum);
@@ -467,8 +467,8 @@ friend std::ostream& operator<<(std::ostream& lhs, const Life& rhs) {
 private:
     const int _x, _y;
     int _p;
-    std::vector<T> _w;               //world
-    std::vector<std::vector<T> > _n; //neighborhoods
+    std::vector<T> _w;                  //world
+    std::vector<std::vector<bool> > _n; //neighborhoods
 // -------
 //  print
 // -------
@@ -498,7 +498,7 @@ public:
  */
     Life(int x, int y, const std::vector<T>& w ) :
         _x(x), _y(y), _p(0), _w(w), _n(x*y) {
-        assert( x*y == w.size() ); //Initial state must be consistent
+        assert( x*y == (int) w.size() ); //Initial state must be consistent
         for(unsigned i = 0; i < _w.size(); ++i)
             if(_w[i].isAlive()) ++_p;
     }
@@ -515,32 +515,32 @@ public:
             for(int i = 0; i < _x; ++i) {
                 int index = j*_x + i;
                 if(j > 0) {
-                    if(i > 0) _n[index].push_back( _w[index - _x - 1] );
-                    else _n[index].push_back(ConwayCell());
-                    _n[index].push_back( _w[index - _x] );
-                    if(i < _x-1) _n[index].push_back( _w[index - _x + 1] );
-                    else _n[index].push_back(ConwayCell());
+                    if(i > 0) _n[index].push_back( _w[index - _x - 1].isAlive() );
+                    else _n[index].push_back(false);
+                    _n[index].push_back( _w[index - _x].isAlive() );
+                    if(i < _x-1) _n[index].push_back( _w[index - _x + 1].isAlive() );
+                    else _n[index].push_back(false);
                 } else {
-                    _n[index].push_back(ConwayCell());
-                    _n[index].push_back(ConwayCell());
-                    _n[index].push_back(ConwayCell());
+                    _n[index].push_back(false);
+                    _n[index].push_back(false);
+                    _n[index].push_back(false);
                 }
 
-                if(i > 0) _n[index].push_back( _w[index - 1] );
-                else _n[index].push_back(ConwayCell());
-                if(i < _x-1) _n[index].push_back( _w[index + 1] );
-                else _n[index].push_back(ConwayCell());
+                if(i > 0) _n[index].push_back( _w[index - 1].isAlive() );
+                else _n[index].push_back(false);
+                if(i < _x-1) _n[index].push_back( _w[index + 1].isAlive() );
+                else _n[index].push_back(false);
 
                 if(j < _y-1) {
-                    if(i > 0) _n[index].push_back( _w[index + _x - 1] );
-                    else _n[index].push_back(ConwayCell());
-                    _n[index].push_back( _w[index + _x] );
-                    if(i < _x-1) _n[index].push_back( _w[index + _x + 1] );
-                    else _n[index].push_back(ConwayCell());
+                    if(i > 0) _n[index].push_back( _w[index + _x - 1].isAlive() );
+                    else _n[index].push_back(false);
+                    _n[index].push_back( _w[index + _x].isAlive() );
+                    if(i < _x-1) _n[index].push_back( _w[index + _x + 1].isAlive() );
+                    else _n[index].push_back(false);
                 } else {
-                    _n[index].push_back(ConwayCell());
-                    _n[index].push_back(ConwayCell());
-                    _n[index].push_back(ConwayCell());
+                    _n[index].push_back(false);
+                    _n[index].push_back(false);
+                    _n[index].push_back(false);
                 }
             }
         }

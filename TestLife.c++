@@ -295,7 +295,7 @@ TEST (FredkinCell, out2) {
   ASSERT_EQ(a.isAlive(),true);
   ostringstream out;
   out << a;
-  string s("1");
+  string s("0");
   ASSERT_EQ(out.str(),s);
 }
 TEST (FredkinCell, out3) {
@@ -584,7 +584,7 @@ TEST (Cell, out_fredkin2) {
   ASSERT_EQ(a.isAlive(),true);
   ostringstream out;
   out << a;
-  string s("1");
+  string s("0");
   ASSERT_EQ(out.str(),s);
 }
 TEST (Cell, out_fredkin3) {

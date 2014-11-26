@@ -10,47 +10,92 @@
 
 #include <cassert>  // assert
 #include <iostream> // cout, endl
+#include <vector>
+#include <string>
 
-
+#include "Life.h"
 
 //helper that reads a board into a 1d vector
-template <typename T>
-std::vector<T> read_world(std::ostream& out, int x, int y) {
+//parse description of life instance, return life instance?
+Life<ConwayCell> read_life_cc(std::istream& in) {
     using namespace std;
-    vector<T> r;
-    while(y) {
+    string type;
+    getline(in,type);
+    int x, y;
+    in >> y;
+    in >> x;
+    if(type != "ConwayCell") assert(false);
+
+    vector<ConwayCell> r;
+    for(int i = 0; i <= y; ++i) {
         string tmp;
-        getline(out,tmp);
+        getline(in,tmp);
         string::iterator b = tmp.begin();
         while(b != tmp.end()) {
             switch(*b) {
-            case '.' : r.push_back(new ConwayCell(0)); break;
-            case '*' : r.push_back(new ConwayCell(1)); break;
-            case '-' : r.push_back(new FredkinCell(0)); break;
-            case '0' : r.push_back(new FredkinCell(1)); break;
-            default: //panic
+            case '.': r.push_back( ConwayCell(0)); break;
+            case '*': r.push_back( ConwayCell(1)); break;
+            default : ;
             }
-        --y;
+            ++b;
+        }
     }
+    string t; getline(in,t);
+    return Life<ConwayCell>(x,y,r);
 }
-
-//parse description of life instance, return life instance?
-Life read_life(std::ostream& out) {
+Life<FredkinCell> read_life_fc(std::istream& in) {
     using namespace std;
     string type;
-    getline(out,type);
+    getline(in,type);
     int x, y;
-    out >> x;
-    out >> y;
-    if(type == "ConwayCell") {
-        return Life(read_world<ConwayCell>(out,x,y));
-    } else if(type == "FredkinCell") {
-        return Life(read_world<FredkinCell>(out,x,y));
-    } else if(type == "Cell") {
-        return Life(read_world<Cell>(out,x,y));
+    in >> y;
+    in >> x;
+    if(type != "FredkinCell") assert(false);
+
+    vector<FredkinCell> r;
+    for(int i = 0; i <=y; ++i) {
+        string tmp;
+        getline(in,tmp);
+        string::iterator b = tmp.begin();
+        while(b != tmp.end()) {
+            switch(*b) {
+            case '-': r.push_back(FredkinCell(0)); break;
+            case '0': r.push_back(FredkinCell(1)); break;
+            default : ;
+            }
+            ++b;
+        }
     }
-    assert(false);
-    return Life(vector<Cell>(9),3,3);
+    string t; getline(in,t);
+    return Life<FredkinCell>(x,y,r);
+}
+Life<Cell> read_life_c(std::istream& in) {
+    using namespace std;
+    string type;
+    getline(in,type);
+    int x, y;
+    in >> y;
+    in >> x;
+    if(type != "Cell") assert(false);
+
+    vector<Cell> r;
+    for(int i = 0; i <=y; ++i) {
+        string tmp;
+        getline(in,tmp);
+        string::iterator b = tmp.begin();
+        while(b != tmp.end()) {
+            switch(*b) {
+            case '.': r.push_back(new  ConwayCell(0)); break;
+            case '*': r.push_back(new  ConwayCell(1)); break;
+            case '-': r.push_back(new FredkinCell(0)); break;
+            case '0': r.push_back(new FredkinCell(1)); break;
+            default : ;
+            }
+            ++b;
+        }
+    }
+    string t; getline(in,t);
+    return Life<Cell>(x,y,r);
 }
 
 
@@ -69,7 +114,7 @@ int main () {
 
     cout << "*** Life<ConwayCell> 21x13 ***" << endl;
     {
-    Life l = read_life(cout);
+    Life<ConwayCell> l = read_life_cc(cin);
     for(int i = 0;i < 13; ++i) {
         cout << "Generation = " << i 
              << ", Population = " << l.population() << '.' << endl
@@ -88,7 +133,7 @@ int main () {
 
     cout << "*** Life<ConwayCell> 20x29 ***" << endl;
     {
-    Life l = read_life(cout);
+    Life<ConwayCell> l = read_life_cc(cin);
     for(int i = 0;i < 29; ++i) {
         if(i%4 == 0)
             cout << "Generation = " << i 
@@ -108,7 +153,7 @@ int main () {
 
     cout << "*** Life<ConwayCell> 109x69 ***" << endl;
     {
-    Life l = read_life(cout);
+    Life<ConwayCell> l = read_life_cc(cin);
     for(int i = 0;i < 2501; ++i) {
         if(i<10 || i==282 || i==322 || i==2176)
             cout << "Generation = " << i 
@@ -133,7 +178,7 @@ int main () {
 
     cout << "*** Life<FredkinCell> 20x20 ***" << endl;
     {
-    Life l = read_life(cout);
+    Life<FredkinCell> l = read_life_fc(cin);
     for(int i = 0;i < 6; ++i) {
         cout << "Generation = " << i 
              << ", Population = " << l.population() << '.' << endl
@@ -152,7 +197,7 @@ int main () {
 
     cout << "*** Life<Cell> 20x20 ***" << endl;
     {
-    Life l = read_life(cout);
+    Life<Cell> l = read_life_c(cin);
     for(int i = 0;i < 6; ++i) {
         cout << "Generation = " << i 
              << ", Population = " << l.population() << '.' << endl
