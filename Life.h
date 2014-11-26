@@ -344,21 +344,6 @@ friend bool operator!=(const Cell& lhs, const Cell& rhs) {
 }
 private:
     AbstractCell* _c;
-public:
-// -----------
-// constructor
-// -----------
-/**
- * creates a new cell given a pointer to an AbstractCell
- * defaults to a dead Conway cell
- * @param the given pointer
- */
-    Cell(AbstractCell* c = new ConwayCell())  : _c(c) {}
-/**
- * copy constructor clones the member
- * @param the Cell being copied
- */
-    Cell(const Cell& that) : _c(that._c->clone()) {}
 // -----
 //   =
 // -----
@@ -372,6 +357,24 @@ public:
         std::swap(_c, that._c);
         return *this;
     }
+public:
+// -----------
+// constructor
+// -----------
+/**
+ * creates a new cell given a pointer to an AbstractCell
+ * defaults to a dead Conway cell
+ * @param the given pointer
+ */
+    Cell(AbstractCell* c = new ConwayCell())  : _c(c) {}
+// -----------
+// constructor
+// -----------
+/**
+ * copy constructor clones the member
+ * @param the Cell being copied
+ */
+    Cell(const Cell& that) : _c(that._c->clone()) {}
 // -----
 //  age
 // -----
