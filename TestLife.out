@@ -1,0 +1,467 @@
+==11344== Memcheck, a memory error detector
+==11344== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==11344== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==11344== Command: TestLife
+==11344== 
+Running main() from gtest_main.cc
+[==========] Running 98 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 26 tests from ConwayCell
+[ RUN      ] ConwayCell.live1
+[       OK ] ConwayCell.live1 (10 ms)
+[ RUN      ] ConwayCell.live2
+[       OK ] ConwayCell.live2 (2 ms)
+[ RUN      ] ConwayCell.live3
+[       OK ] ConwayCell.live3 (2 ms)
+[ RUN      ] ConwayCell.clone1
+[       OK ] ConwayCell.clone1 (4 ms)
+[ RUN      ] ConwayCell.clone2
+[       OK ] ConwayCell.clone2 (4 ms)
+[ RUN      ] ConwayCell.clone3
+[       OK ] ConwayCell.clone3 (3 ms)
+[ RUN      ] ConwayCell.agen1
+[       OK ] ConwayCell.agen1 (3 ms)
+[ RUN      ] ConwayCell.agen2
+[       OK ] ConwayCell.agen2 (3 ms)
+[ RUN      ] ConwayCell.agen3
+[       OK ] ConwayCell.agen3 (3 ms)
+[ RUN      ] ConwayCell.agen4
+[       OK ] ConwayCell.agen4 (3 ms)
+[ RUN      ] ConwayCell.agen5
+[       OK ] ConwayCell.agen5 (3 ms)
+[ RUN      ] ConwayCell.agen6
+[       OK ] ConwayCell.agen6 (4 ms)
+[ RUN      ] ConwayCell.agen7
+[       OK ] ConwayCell.agen7 (3 ms)
+[ RUN      ] ConwayCell.agen8
+[       OK ] ConwayCell.agen8 (3 ms)
+[ RUN      ] ConwayCell.agen9
+[       OK ] ConwayCell.agen9 (3 ms)
+[ RUN      ] ConwayCell.agen10
+[       OK ] ConwayCell.agen10 (4 ms)
+[ RUN      ] ConwayCell.out1
+[       OK ] ConwayCell.out1 (8 ms)
+[ RUN      ] ConwayCell.out2
+[       OK ] ConwayCell.out2 (3 ms)
+[ RUN      ] ConwayCell.eq1
+[       OK ] ConwayCell.eq1 (5 ms)
+[ RUN      ] ConwayCell.eq2
+[       OK ] ConwayCell.eq2 (4 ms)
+[ RUN      ] ConwayCell.eq3
+[       OK ] ConwayCell.eq3 (4 ms)
+[ RUN      ] ConwayCell.eq4
+[       OK ] ConwayCell.eq4 (4 ms)
+[ RUN      ] ConwayCell.ne1
+[       OK ] ConwayCell.ne1 (5 ms)
+[ RUN      ] ConwayCell.ne2
+[       OK ] ConwayCell.ne2 (4 ms)
+[ RUN      ] ConwayCell.ne3
+[       OK ] ConwayCell.ne3 (4 ms)
+[ RUN      ] ConwayCell.ne4
+[       OK ] ConwayCell.ne4 (4 ms)
+[----------] 26 tests from ConwayCell (115 ms total)
+
+[----------] 27 tests from FredkinCell
+[ RUN      ] FredkinCell.live1
+[       OK ] FredkinCell.live1 (3 ms)
+[ RUN      ] FredkinCell.live2
+[       OK ] FredkinCell.live2 (2 ms)
+[ RUN      ] FredkinCell.live3
+[       OK ] FredkinCell.live3 (2 ms)
+[ RUN      ] FredkinCell.clone1
+[       OK ] FredkinCell.clone1 (4 ms)
+[ RUN      ] FredkinCell.clone2
+[       OK ] FredkinCell.clone2 (3 ms)
+[ RUN      ] FredkinCell.clone3
+[       OK ] FredkinCell.clone3 (4 ms)
+[ RUN      ] FredkinCell.agen1
+[       OK ] FredkinCell.agen1 (3 ms)
+[ RUN      ] FredkinCell.agen2
+[       OK ] FredkinCell.agen2 (3 ms)
+[ RUN      ] FredkinCell.agen3
+[       OK ] FredkinCell.agen3 (3 ms)
+[ RUN      ] FredkinCell.agen4
+[       OK ] FredkinCell.agen4 (3 ms)
+[ RUN      ] FredkinCell.agen5
+[       OK ] FredkinCell.agen5 (3 ms)
+[ RUN      ] FredkinCell.agen6
+[       OK ] FredkinCell.agen6 (3 ms)
+[ RUN      ] FredkinCell.agen7
+[       OK ] FredkinCell.agen7 (4 ms)
+[ RUN      ] FredkinCell.agen8
+[       OK ] FredkinCell.agen8 (3 ms)
+[ RUN      ] FredkinCell.agen9
+[       OK ] FredkinCell.agen9 (3 ms)
+[ RUN      ] FredkinCell.agen10
+[       OK ] FredkinCell.agen10 (3 ms)
+[ RUN      ] FredkinCell.out1
+[       OK ] FredkinCell.out1 (4 ms)
+[ RUN      ] FredkinCell.out2
+[       OK ] FredkinCell.out2 (7 ms)
+[ RUN      ] FredkinCell.out3
+[       OK ] FredkinCell.out3 (4 ms)
+[ RUN      ] FredkinCell.eq1
+[       OK ] FredkinCell.eq1 (5 ms)
+[ RUN      ] FredkinCell.eq2
+[       OK ] FredkinCell.eq2 (4 ms)
+[ RUN      ] FredkinCell.eq3
+[       OK ] FredkinCell.eq3 (4 ms)
+[ RUN      ] FredkinCell.eq4
+[       OK ] FredkinCell.eq4 (4 ms)
+[ RUN      ] FredkinCell.ne1
+[       OK ] FredkinCell.ne1 (4 ms)
+[ RUN      ] FredkinCell.ne2
+[       OK ] FredkinCell.ne2 (4 ms)
+[ RUN      ] FredkinCell.ne3
+[       OK ] FredkinCell.ne3 (4 ms)
+[ RUN      ] FredkinCell.ne4
+[       OK ] FredkinCell.ne4 (4 ms)
+[----------] 27 tests from FredkinCell (99 ms total)
+
+[----------] 45 tests from Cell
+[ RUN      ] Cell.live1
+[       OK ] Cell.live1 (2 ms)
+[ RUN      ] Cell.live2
+[       OK ] Cell.live2 (2 ms)
+[ RUN      ] Cell.live3
+[       OK ] Cell.live3 (3 ms)
+[ RUN      ] Cell.live4
+[       OK ] Cell.live4 (2 ms)
+[ RUN      ] Cell.live5
+[       OK ] Cell.live5 (2 ms)
+[ RUN      ] Cell.live6
+[       OK ] Cell.live6 (3 ms)
+[ RUN      ] Cell.copy1
+[       OK ] Cell.copy1 (4 ms)
+[ RUN      ] Cell.copy2
+[       OK ] Cell.copy2 (3 ms)
+[ RUN      ] Cell.copy3
+[       OK ] Cell.copy3 (3 ms)
+[ RUN      ] Cell.copy4
+[       OK ] Cell.copy4 (4 ms)
+[ RUN      ] Cell.copy5
+[       OK ] Cell.copy5 (4 ms)
+[ RUN      ] Cell.copy6
+[       OK ] Cell.copy6 (4 ms)
+[ RUN      ] Cell.agen_conway1
+[       OK ] Cell.agen_conway1 (3 ms)
+[ RUN      ] Cell.agen_conway2
+[       OK ] Cell.agen_conway2 (3 ms)
+[ RUN      ] Cell.agen_conway3
+[       OK ] Cell.agen_conway3 (4 ms)
+[ RUN      ] Cell.agen_conway4
+[       OK ] Cell.agen_conway4 (3 ms)
+[ RUN      ] Cell.agen_conway5
+[       OK ] Cell.agen_conway5 (4 ms)
+[ RUN      ] Cell.agen_conway6
+[       OK ] Cell.agen_conway6 (4 ms)
+[ RUN      ] Cell.agen_conway7
+[       OK ] Cell.agen_conway7 (3 ms)
+[ RUN      ] Cell.agen_conway8
+[       OK ] Cell.agen_conway8 (4 ms)
+[ RUN      ] Cell.agen_conway9
+[       OK ] Cell.agen_conway9 (3 ms)
+[ RUN      ] Cell.agen_conway10
+[       OK ] Cell.agen_conway10 (4 ms)
+[ RUN      ] Cell.agen_fredkin1
+[       OK ] Cell.agen_fredkin1 (4 ms)
+[ RUN      ] Cell.agen_fredkin2
+[       OK ] Cell.agen_fredkin2 (3 ms)
+[ RUN      ] Cell.agen_fredkin3
+[       OK ] Cell.agen_fredkin3 (4 ms)
+[ RUN      ] Cell.agen_fredkin4
+[       OK ] Cell.agen_fredkin4 (3 ms)
+[ RUN      ] Cell.agen_fredkin5
+[       OK ] Cell.agen_fredkin5 (3 ms)
+[ RUN      ] Cell.agen_fredkin6
+[       OK ] Cell.agen_fredkin6 (4 ms)
+[ RUN      ] Cell.agen_fredkin7
+[       OK ] Cell.agen_fredkin7 (3 ms)
+[ RUN      ] Cell.agen_fredkin8
+[       OK ] Cell.agen_fredkin8 (4 ms)
+[ RUN      ] Cell.agen_fredkin9
+[       OK ] Cell.agen_fredkin9 (3 ms)
+[ RUN      ] Cell.agen_fredkin10
+[       OK ] Cell.agen_fredkin10 (3 ms)
+[ RUN      ] Cell.out_conway1
+[       OK ] Cell.out_conway1 (4 ms)
+[ RUN      ] Cell.out_conway2
+[       OK ] Cell.out_conway2 (4 ms)
+[ RUN      ] Cell.out_fredkin1
+[       OK ] Cell.out_fredkin1 (4 ms)
+[ RUN      ] Cell.out_fredkin2
+[       OK ] Cell.out_fredkin2 (3 ms)
+[ RUN      ] Cell.out_fredkin3
+[       OK ] Cell.out_fredkin3 (4 ms)
+[ RUN      ] Cell.eq1
+[       OK ] Cell.eq1 (5 ms)
+[ RUN      ] Cell.eq2
+[       OK ] Cell.eq2 (4 ms)
+[ RUN      ] Cell.eq3
+[       OK ] Cell.eq3 (5 ms)
+[ RUN      ] Cell.eq4
+[       OK ] Cell.eq4 (5 ms)
+[ RUN      ] Cell.ne1
+[       OK ] Cell.ne1 (5 ms)
+[ RUN      ] Cell.ne2
+[       OK ] Cell.ne2 (4 ms)
+[ RUN      ] Cell.ne3
+[       OK ] Cell.ne3 (5 ms)
+[ RUN      ] Cell.ne4
+[       OK ] Cell.ne4 (5 ms)
+[----------] 45 tests from Cell (170 ms total)
+
+[----------] Global test environment tear-down
+[==========] 98 tests from 3 test cases ran. (412 ms total)
+[  PASSED  ] 98 tests.
+==11344== 
+==11344== HEAP SUMMARY:
+==11344==     in use at exit: 0 bytes in 0 blocks
+==11344==   total heap usage: 3,651 allocs, 3,651 frees, 263,134 bytes allocated
+==11344== 
+==11344== All heap blocks were freed -- no leaks are possible
+==11344== 
+==11344== For counts of detected and suppressed errors, rerun with: -v
+==11344== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+File 'Life.h'
+Lines executed:1.82% of 55
+Branches executed:8.00% of 50
+Taken at least once:4.00% of 50
+Calls executed:2.63% of 38
+Creating 'Life.h.gcov'
+
+File '/usr/include/c++/4.7/iostream'
+Lines executed:100.00% of 1
+No branches
+Calls executed:100.00% of 2
+Creating 'iostream.gcov'
+
+File '/usr/include/c++/4.7/bits/stl_vector.h'
+Lines executed:0.00% of 4
+No branches
+No calls
+Creating 'stl_vector.h.gcov'
+
+File '/usr/include/c++/4.7/ostream'
+No executable lines
+No branches
+No calls
+Removing 'ostream.gcov'
+
+File 'TestLife.c++'
+Lines executed:100.00% of 527
+Branches executed:51.88% of 5436
+Taken at least once:25.97% of 5436
+Calls executed:47.87% of 4427
+Creating 'TestLife.c++.gcov'
+
+File '/usr/include/c++/4.7/bits/basic_ios.h'
+Lines executed:0.00% of 4
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 1
+Creating 'basic_ios.h.gcov'
+
+File '/usr/include/c++/4.7/ostream'
+No executable lines
+No branches
+No calls
+Removing 'ostream.gcov'
+
+File '/usr/include/gtest/internal/gtest-port.h'
+Lines executed:23.53% of 17
+Branches executed:7.14% of 28
+Taken at least once:3.57% of 28
+Calls executed:3.85% of 26
+Creating 'gtest-port.h.gcov'
+
+File '/usr/include/gtest/internal/gtest-param-util.h'
+Lines executed:0.00% of 29
+Branches executed:0.00% of 34
+Taken at least once:0.00% of 34
+Calls executed:0.00% of 60
+Creating 'gtest-param-util.h.gcov'
+
+File '/usr/include/c++/4.7/bits/stl_bvector.h'
+Lines executed:0.00% of 32
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 14
+Creating 'stl_bvector.h.gcov'
+
+File '/usr/include/gtest/internal/gtest-internal.h'
+Lines executed:100.00% of 4
+Branches executed:100.00% of 394
+Taken at least once:50.00% of 394
+Calls executed:66.44% of 885
+Creating 'gtest-internal.h.gcov'
+
+File '/usr/include/c++/4.7/iostream'
+Lines executed:100.00% of 1
+No branches
+Calls executed:100.00% of 2
+Creating 'iostream.gcov'
+
+File '/usr/include/c++/4.7/ext/new_allocator.h'
+Lines executed:0.00% of 5
+No branches
+Calls executed:0.00% of 1
+Creating 'new_allocator.h.gcov'
+
+File '/usr/include/gtest/gtest-printers.h'
+Lines executed:0.00% of 19
+Branches executed:0.00% of 18
+Taken at least once:0.00% of 18
+Calls executed:0.00% of 22
+Creating 'gtest-printers.h.gcov'
+
+File '/usr/include/c++/4.7/bits/allocator.h'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+Creating 'allocator.h.gcov'
+
+File '/usr/include/c++/4.7/bits/basic_string.h'
+Lines executed:28.57% of 7
+Branches executed:50.00% of 8
+Taken at least once:25.00% of 8
+Calls executed:54.55% of 11
+Creating 'basic_string.h.gcov'
+
+File '/usr/include/c++/4.7/bits/stl_iterator_base_funcs.h'
+Lines executed:0.00% of 4
+No branches
+Calls executed:0.00% of 2
+Creating 'stl_iterator_base_funcs.h.gcov'
+
+File '/usr/include/c++/4.7/bits/stl_iterator_base_types.h'
+Lines executed:0.00% of 3
+No branches
+No calls
+Creating 'stl_iterator_base_types.h.gcov'
+
+File '/usr/include/c++/4.7/ext/type_traits.h'
+Lines executed:0.00% of 2
+No branches
+No calls
+Creating 'type_traits.h.gcov'
+
+File '/usr/include/c++/4.7/sstream'
+Lines executed:0.00% of 1
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 5
+Creating 'sstream.gcov'
+
+File '/usr/include/c++/4.7/bits/basic_string.tcc'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 16
+Taken at least once:0.00% of 16
+Calls executed:0.00% of 20
+Creating 'basic_string.tcc.gcov'
+
+File '/usr/include/gtest/gtest.h'
+Lines executed:42.86% of 21
+Branches executed:18.18% of 22
+Taken at least once:9.09% of 22
+Calls executed:14.29% of 42
+Creating 'gtest.h.gcov'
+
+File '/usr/include/c++/4.7/streambuf'
+No executable lines
+No branches
+No calls
+Removing 'streambuf.gcov'
+
+File '/usr/include/c++/4.7/istream'
+No executable lines
+No branches
+No calls
+Removing 'istream.gcov'
+
+File '/usr/include/c++/4.7/bits/stl_vector.h'
+Lines executed:0.00% of 4
+No branches
+No calls
+Creating 'stl_vector.h.gcov'
+
+File '/usr/include/c++/4.7/iomanip'
+Lines executed:0.00% of 2
+No branches
+No calls
+Creating 'iomanip.gcov'
+
+File 'Life.h'
+Lines executed:77.46% of 71
+Branches executed:75.00% of 48
+Taken at least once:58.33% of 48
+Calls executed:61.70% of 47
+Creating 'Life.h.gcov'
+
+File '/usr/include/gtest/gtest-message.h'
+Lines executed:0.00% of 4
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+Calls executed:0.00% of 12
+Creating 'gtest-message.h.gcov'
+
+File '/usr/include/gtest/gtest-test-part.h'
+Lines executed:0.00% of 1
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 3
+Creating 'gtest-test-part.h.gcov'
+
+File '/usr/include/gtest/internal/gtest-death-test-internal.h'
+Lines executed:0.00% of 2
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+Calls executed:0.00% of 6
+Creating 'gtest-death-test-internal.h.gcov'
+
+File '/usr/include/gtest/internal/gtest-string.h'
+Lines executed:9.09% of 11
+Branches executed:100.00% of 2
+Taken at least once:100.00% of 2
+Calls executed:20.00% of 5
+Creating 'gtest-string.h.gcov'
+
+File '/usr/include/c++/4.7/typeinfo'
+Lines executed:0.00% of 3
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+Creating 'typeinfo.gcov'
+
+File '/usr/include/c++/4.7/bits/locale_facets.h'
+Lines executed:0.00% of 5
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 2
+Creating 'locale_facets.h.gcov'
+
+File '/usr/include/c++/4.7/bits/ios_base.h'
+Lines executed:0.00% of 8
+No branches
+No calls
+Creating 'ios_base.h.gcov'
+
+File '/usr/include/c++/4.7/ext/atomicity.h'
+Lines executed:0.00% of 10
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 3
+Creating 'atomicity.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/c++/4.7/bits/gthr-default.h'
+Lines executed:0.00% of 2
+No branches
+No calls
+Creating 'gthr-default.h.gcov'
+
+File '/usr/include/c++/4.7/bits/char_traits.h'
+Lines executed:25.00% of 8
+No branches
+No calls
+Creating 'char_traits.h.gcov'
+

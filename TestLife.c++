@@ -23,22 +23,25 @@ TEST (ConwayCell, live3) {
 TEST (ConwayCell, clone1) {
   ConwayCell a;
   ASSERT_EQ(a.isAlive(),false);
-  ConwayCell* b = a.clone();
-  ASSERT_EQ(b->isAlive(),false);
+  ConwayCell* b = dynamic_cast<ConwayCell*>(a.clone());
+  if(b==0) ASSERT_EQ(true,false);
+  else ASSERT_EQ(b->isAlive(),false);
   delete b;
 }
 TEST (ConwayCell, clone2) {
   ConwayCell a(0);
   ASSERT_EQ(a.isAlive(),false);
-  ConwayCell* b = a.clone();
-  ASSERT_EQ(b->isAlive(),false);
+  ConwayCell* b = dynamic_cast<ConwayCell*>(a.clone());
+  if(b==0) ASSERT_EQ(true,false);
+  else ASSERT_EQ(b->isAlive(),false);
   delete b;
 }
 TEST (ConwayCell, clone3) {
   ConwayCell a(1);
   ASSERT_EQ(a.isAlive(),true);
-  ConwayCell* b = a.clone();
-  ASSERT_EQ(b->isAlive(),true);
+  ConwayCell* b = dynamic_cast<ConwayCell*>(a.clone());
+  if(b==0) ASSERT_EQ(true,false);
+  else ASSERT_EQ(b->isAlive(),true);
   delete b;
 }
 TEST (ConwayCell, agen1) {
@@ -122,35 +125,35 @@ TEST (ConwayCell, eq1) {
   ConwayCell a;
   ASSERT_EQ(a.isAlive(),false);
   ConwayCell b(1);
-  ASSERT_EQ(a.isAlive(),true);
+  ASSERT_EQ(b.isAlive(),true);
   ASSERT_EQ(a == b, false);
 }
 TEST (ConwayCell, eq2) {
   ConwayCell a;
   ASSERT_EQ(a.isAlive(),false);
   ConwayCell b;
-  ASSERT_EQ(a.isAlive(),false);
+  ASSERT_EQ(b.isAlive(),false);
   ASSERT_EQ(a == b, true);
 }
 TEST (ConwayCell, eq3) {
   ConwayCell a(1);
   ASSERT_EQ(a.isAlive(), true);
   ConwayCell b(1);
-  ASSERT_EQ(a.isAlive(), true);
+  ASSERT_EQ(b.isAlive(), true);
   ASSERT_EQ(a == b, true);
 }
 TEST (ConwayCell, eq4) {
   ConwayCell a(1);
   ASSERT_EQ(a.isAlive(), true);
   ConwayCell b;
-  ASSERT_EQ(a.isAlive(), false);
+  ASSERT_EQ(b.isAlive(), false);
   ASSERT_EQ(a == b, false);
 }
 TEST (ConwayCell, ne1) {
   ConwayCell a;
   ASSERT_EQ(a.isAlive(), false);
   ConwayCell b(1);
-  ASSERT_EQ(a.isAlive(), true);
+  ASSERT_EQ(b.isAlive(), true);
   ASSERT_EQ(a != b, true);
 }
 TEST (ConwayCell, ne2) {
@@ -198,22 +201,25 @@ TEST (FredkinCell, live3) {
 TEST (FredkinCell, clone1) {
   FredkinCell a;
   ASSERT_EQ(a.isAlive(),false);
-  FredkinCell* b = a.clone();
-  ASSERT_EQ(b->isAlive(),false);
+  FredkinCell* b = dynamic_cast<FredkinCell*>(a.clone());
+  if(b==0) ASSERT_EQ(true,false);
+  else ASSERT_EQ(b->isAlive(),false);
   delete b;
 }
 TEST (FredkinCell, clone2) {
   FredkinCell a(0);
   ASSERT_EQ(a.isAlive(),false);
-  FredkinCell* b = a.clone();
-  ASSERT_EQ(b->isAlive(),false);
+  FredkinCell* b = dynamic_cast<FredkinCell*>(a.clone());
+  if(b==0) ASSERT_EQ(true,false);
+  else ASSERT_EQ(b->isAlive(),false);
   delete b;
 }
 TEST (FredkinCell, clone3) {
   FredkinCell a(1);
   ASSERT_EQ(a.isAlive(),true);
-  FredkinCell* b = a.clone();
-  ASSERT_EQ(b->isAlive(),true);
+  FredkinCell* b = dynamic_cast<FredkinCell*>(a.clone());
+  if(b==0) ASSERT_EQ(true,false);
+  else ASSERT_EQ(b->isAlive(),true);
   delete b;
 }
 TEST (FredkinCell, agen1) {
@@ -306,35 +312,35 @@ TEST (FredkinCell, eq1) {
   FredkinCell a;
   ASSERT_EQ(a.isAlive(),false);
   FredkinCell b(1);
-  ASSERT_EQ(a.isAlive(),true);
+  ASSERT_EQ(b.isAlive(),true);
   ASSERT_EQ(a == b, false);
 }
 TEST (FredkinCell, eq2) {
   FredkinCell a;
   ASSERT_EQ(a.isAlive(),false);
   FredkinCell b;
-  ASSERT_EQ(a.isAlive(),false);
+  ASSERT_EQ(b.isAlive(),false);
   ASSERT_EQ(a == b, true);
 }
 TEST (FredkinCell, eq3) {
   FredkinCell a(1);
   ASSERT_EQ(a.isAlive(), true);
   FredkinCell b(1);
-  ASSERT_EQ(a.isAlive(), true);
+  ASSERT_EQ(b.isAlive(), true);
   ASSERT_EQ(a == b, true);
 }
 TEST (FredkinCell, eq4) {
   FredkinCell a(1);
   ASSERT_EQ(a.isAlive(), true);
   FredkinCell b;
-  ASSERT_EQ(a.isAlive(), false);
+  ASSERT_EQ(b.isAlive(), false);
   ASSERT_EQ(a == b, false);
 }
 TEST (FredkinCell, ne1) {
   FredkinCell a;
   ASSERT_EQ(a.isAlive(), false);
   FredkinCell b(1);
-  ASSERT_EQ(a.isAlive(), true);
+  ASSERT_EQ(b.isAlive(), true);
   ASSERT_EQ(a != b, true);
 }
 TEST (FredkinCell, ne2) {
@@ -459,32 +465,32 @@ TEST (Cell, agen_conway5) {
   ASSERT_EQ(a.isAlive(),false);
 }
 TEST (Cell, agen_conway6) {
-  Cell a(1);
+  Cell a(new ConwayCell(1));
   ASSERT_EQ(a.isAlive(),true);
   a.age(3);
   ASSERT_EQ(a.isAlive(),true);
 }
 TEST (Cell, agen_conway7) {
-  Cell a(1);
+  Cell a(new ConwayCell(1));
   ASSERT_EQ(a.isAlive(),true);
   a.age(0);
   ASSERT_EQ(a.isAlive(),false);
 }
 TEST (Cell, agen_conway8) {
-  Cell a(1);
+  Cell a(new ConwayCell(1));
   ASSERT_EQ(a.isAlive(),true);
   a.age(1);
   ASSERT_EQ(a.isAlive(),false);
 }
 
 TEST (Cell, agen_conway9) {
-  Cell a(1);
+  Cell a(new ConwayCell(1));
   ASSERT_EQ(a.isAlive(),true);
   a.age(2);
   ASSERT_EQ(a.isAlive(),true);
 }
 TEST (Cell, agen_conway10) {
-  Cell a(1);
+  Cell a(new ConwayCell(1));
   ASSERT_EQ(a.isAlive(),true);
   a.age(4);
   ASSERT_EQ(a.isAlive(),false);
@@ -595,35 +601,35 @@ TEST (Cell, eq1) {
   Cell a;
   ASSERT_EQ(a.isAlive(),false);
   Cell b(new ConwayCell(1));
-  ASSERT_EQ(a.isAlive(),true);
+  ASSERT_EQ(b.isAlive(),true);
   ASSERT_EQ(a == b, false);
 }
 TEST (Cell, eq2) {
   Cell a;
   ASSERT_EQ(a.isAlive(),false);
   Cell b;
-  ASSERT_EQ(a.isAlive(),false);
+  ASSERT_EQ(b.isAlive(),false);
   ASSERT_EQ(a == b, true);
 }
 TEST (Cell, eq3) {
   Cell a(new ConwayCell(1));
   ASSERT_EQ(a.isAlive(), true);
   Cell b(new ConwayCell(1));
-  ASSERT_EQ(a.isAlive(), true);
+  ASSERT_EQ(b.isAlive(), true);
   ASSERT_EQ(a == b, true);
 }
 TEST (Cell, eq4) {
   Cell a(new ConwayCell(1));
   ASSERT_EQ(a.isAlive(), true);
   Cell b;
-  ASSERT_EQ(a.isAlive(), false);
+  ASSERT_EQ(b.isAlive(), false);
   ASSERT_EQ(a == b, false);
 }
 TEST (Cell, ne1) {
   Cell a;
   ASSERT_EQ(a.isAlive(), false);
   Cell b(new ConwayCell(1));
-  ASSERT_EQ(a.isAlive(), true);
+  ASSERT_EQ(b.isAlive(), true);
   ASSERT_EQ(a != b, true);
 }
 TEST (Cell, ne2) {

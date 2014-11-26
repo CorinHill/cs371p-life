@@ -101,6 +101,13 @@ public:
  * @return whether or not this cell is alive
  */
     virtual bool isAlive() const = 0; //only kind of a getter
+// ----------
+// destructor
+// ----------
+/**
+ * destructor is virtual :D
+ */
+    virtual ~AbstractCell() {};
 };
 
 /**
@@ -108,7 +115,7 @@ public:
  */
 class  ConwayCell : public AbstractCell {
 private:
-    unsigned _s;
+    int _s;
 protected:
 // -------
 //  write
@@ -145,7 +152,7 @@ public:
  * default state is dead
  * @param s the given state
  */
-    ConwayCell(unsigned s = 0) : _s(s) {}
+    ConwayCell(int s = 0) : _s(s) {}
 // -------
 //  clone
 // -------
@@ -165,7 +172,7 @@ public:
  */
     virtual void age(const std::vector<AbstractCell>& n) {
         int sum = 0;
-        for(int i = 0; i < n.size(); ++i ) {
+        for(unsigned i = 0; i < n.size(); ++i ) {
             if( n[i].isAlive() ) ++sum;
         }
         age(sum);
@@ -178,9 +185,9 @@ public:
  * @param n the number of live cells surrounding
  */
     virtual void age(int n) {
-        if(_s) //alive
+        if(_s) { //alive
             if(n<2 || n>3) _s = 0;
-        else   //dead
+        } else   //dead
             if(n==3) _s = 1;
     }
 // ---------
@@ -191,6 +198,13 @@ public:
  * @return whether or not this cell is alive
  */
     virtual bool isAlive() const { return _s!=0 ;}   
+// ----------
+// destructor
+// ----------
+/**
+ * destructor is virtual :D
+ */
+    virtual ~ConwayCell() {};
 };
 
 
@@ -201,7 +215,7 @@ public:
  */
 class FredkinCell : public AbstractCell {
 private:
-    unsigned _s;
+    int _s;
 protected:
 // --------
 //  write
@@ -240,7 +254,7 @@ public:
  * default state is dead
  * @param s the given state
  */
-    FredkinCell(unsigned s = 0) : _s(s) {}
+    FredkinCell(int s = 0) : _s(s) {}
 // -------
 //  clone
 // -------
@@ -296,6 +310,13 @@ public:
  * @return whether this cell has reached adulthood or not (2 turns old)
  */
     bool isAdult() const { return _s >= 2;}
+// ----------
+// destructor
+// ----------
+/**
+ * destructor is virtual :D
+ */
+    virtual ~FredkinCell() {};
 };
 
 
@@ -391,7 +412,7 @@ public:
             if(n[6].isAlive()) ++sum;
         } else
         if( const ConwayCell* const p = dynamic_cast<const ConwayCell*>(_c) ) {
-            for(int i = 0; i < n.size(); ++i)
+            for(unsigned i = 0; i < n.size(); ++i)
                 if(n[i].isAlive()) ++sum;
         } //else //other subclass of AbstractCell, unknown behavior
 
@@ -462,6 +483,7 @@ private:
             }
             out << std::endl;
         }
+        return out;
     }
 public:
 // -----------

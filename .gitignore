@@ -12,3 +12,7 @@
 #ignore text and object files
 *.txt
 *.obj
+
+#ignore binary
+RunLife
+TestLife
