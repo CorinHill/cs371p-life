@@ -466,6 +466,7 @@ friend std::ostream& operator<<(std::ostream& lhs, const Life& rhs) {
 }
 private:
     const int _x, _y;
+    int _p;
     std::vector<T> _w;               //world
     std::vector<std::vector<T> > _n; //neighborhoods
 // -------
@@ -496,8 +497,10 @@ public:
  * @param w the initial state of the game "board"
  */
     Life(int x, int y, const std::vector<T>& w ) :
-        _x(x), _y(y), _w(w), _n(x*y) {
+        _x(x), _y(y), _p(0), _w(w), _n(x*y) {
         assert( x*y == w.size() ); //Initial state must be consistent
+        for(unsigned i = 0; i < _w.size(); ++i)
+            if(_w[i].isAlive()) ++_p;
     }
 // -------
 //  round
@@ -541,10 +544,12 @@ public:
                 }
             }
         }
+        _p = 0;
         for(int j = 0; j < _y; ++j)
             for(int i = 0; i < _x; ++i) {
                 _w[j*_x + i].age( _n[j*_x + i] );
                 _n[j*_x + i].clear();
+                if(_w[j*_x + i].isAlive()) ++_p;
             }
     }
 // --------
@@ -559,6 +564,16 @@ public:
         for(int i = 0; i < num; ++i)
             round();
     }
+
+// ------------
+//  population
+// ------------
+/**
+ * view state
+ * why are we tracking population?
+ * @return the live population
+ */
+    int population() { return _p; }
 };
 
 

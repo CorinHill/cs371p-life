@@ -1,107 +1,107 @@
-==11344== Memcheck, a memory error detector
-==11344== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
-==11344== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
-==11344== Command: TestLife
-==11344== 
+==14829== Memcheck, a memory error detector
+==14829== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==14829== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==14829== Command: TestLife
+==14829== 
 Running main() from gtest_main.cc
 [==========] Running 98 tests from 3 test cases.
 [----------] Global test environment set-up.
 [----------] 26 tests from ConwayCell
 [ RUN      ] ConwayCell.live1
-[       OK ] ConwayCell.live1 (10 ms)
+[       OK ] ConwayCell.live1 (13 ms)
 [ RUN      ] ConwayCell.live2
 [       OK ] ConwayCell.live2 (2 ms)
 [ RUN      ] ConwayCell.live3
 [       OK ] ConwayCell.live3 (2 ms)
 [ RUN      ] ConwayCell.clone1
-[       OK ] ConwayCell.clone1 (4 ms)
+[       OK ] ConwayCell.clone1 (5 ms)
 [ RUN      ] ConwayCell.clone2
-[       OK ] ConwayCell.clone2 (4 ms)
+[       OK ] ConwayCell.clone2 (5 ms)
 [ RUN      ] ConwayCell.clone3
-[       OK ] ConwayCell.clone3 (3 ms)
+[       OK ] ConwayCell.clone3 (4 ms)
 [ RUN      ] ConwayCell.agen1
-[       OK ] ConwayCell.agen1 (3 ms)
+[       OK ] ConwayCell.agen1 (4 ms)
 [ RUN      ] ConwayCell.agen2
 [       OK ] ConwayCell.agen2 (3 ms)
 [ RUN      ] ConwayCell.agen3
-[       OK ] ConwayCell.agen3 (3 ms)
+[       OK ] ConwayCell.agen3 (4 ms)
 [ RUN      ] ConwayCell.agen4
-[       OK ] ConwayCell.agen4 (3 ms)
+[       OK ] ConwayCell.agen4 (4 ms)
 [ RUN      ] ConwayCell.agen5
-[       OK ] ConwayCell.agen5 (3 ms)
+[       OK ] ConwayCell.agen5 (4 ms)
 [ RUN      ] ConwayCell.agen6
-[       OK ] ConwayCell.agen6 (4 ms)
+[       OK ] ConwayCell.agen6 (3 ms)
 [ RUN      ] ConwayCell.agen7
-[       OK ] ConwayCell.agen7 (3 ms)
+[       OK ] ConwayCell.agen7 (4 ms)
 [ RUN      ] ConwayCell.agen8
 [       OK ] ConwayCell.agen8 (3 ms)
 [ RUN      ] ConwayCell.agen9
-[       OK ] ConwayCell.agen9 (3 ms)
+[       OK ] ConwayCell.agen9 (5 ms)
 [ RUN      ] ConwayCell.agen10
-[       OK ] ConwayCell.agen10 (4 ms)
+[       OK ] ConwayCell.agen10 (5 ms)
 [ RUN      ] ConwayCell.out1
-[       OK ] ConwayCell.out1 (8 ms)
+[       OK ] ConwayCell.out1 (9 ms)
 [ RUN      ] ConwayCell.out2
-[       OK ] ConwayCell.out2 (3 ms)
+[       OK ] ConwayCell.out2 (4 ms)
 [ RUN      ] ConwayCell.eq1
 [       OK ] ConwayCell.eq1 (5 ms)
 [ RUN      ] ConwayCell.eq2
-[       OK ] ConwayCell.eq2 (4 ms)
+[       OK ] ConwayCell.eq2 (6 ms)
 [ RUN      ] ConwayCell.eq3
-[       OK ] ConwayCell.eq3 (4 ms)
+[       OK ] ConwayCell.eq3 (5 ms)
 [ RUN      ] ConwayCell.eq4
-[       OK ] ConwayCell.eq4 (4 ms)
+[       OK ] ConwayCell.eq4 (5 ms)
 [ RUN      ] ConwayCell.ne1
-[       OK ] ConwayCell.ne1 (5 ms)
+[       OK ] ConwayCell.ne1 (4 ms)
 [ RUN      ] ConwayCell.ne2
-[       OK ] ConwayCell.ne2 (4 ms)
+[       OK ] ConwayCell.ne2 (5 ms)
 [ RUN      ] ConwayCell.ne3
-[       OK ] ConwayCell.ne3 (4 ms)
+[       OK ] ConwayCell.ne3 (6 ms)
 [ RUN      ] ConwayCell.ne4
 [       OK ] ConwayCell.ne4 (4 ms)
-[----------] 26 tests from ConwayCell (115 ms total)
+[----------] 26 tests from ConwayCell (139 ms total)
 
 [----------] 27 tests from FredkinCell
 [ RUN      ] FredkinCell.live1
 [       OK ] FredkinCell.live1 (3 ms)
 [ RUN      ] FredkinCell.live2
-[       OK ] FredkinCell.live2 (2 ms)
+[       OK ] FredkinCell.live2 (3 ms)
 [ RUN      ] FredkinCell.live3
-[       OK ] FredkinCell.live3 (2 ms)
+[       OK ] FredkinCell.live3 (3 ms)
 [ RUN      ] FredkinCell.clone1
 [       OK ] FredkinCell.clone1 (4 ms)
 [ RUN      ] FredkinCell.clone2
-[       OK ] FredkinCell.clone2 (3 ms)
+[       OK ] FredkinCell.clone2 (4 ms)
 [ RUN      ] FredkinCell.clone3
 [       OK ] FredkinCell.clone3 (4 ms)
 [ RUN      ] FredkinCell.agen1
 [       OK ] FredkinCell.agen1 (3 ms)
 [ RUN      ] FredkinCell.agen2
-[       OK ] FredkinCell.agen2 (3 ms)
+[       OK ] FredkinCell.agen2 (4 ms)
 [ RUN      ] FredkinCell.agen3
 [       OK ] FredkinCell.agen3 (3 ms)
 [ RUN      ] FredkinCell.agen4
-[       OK ] FredkinCell.agen4 (3 ms)
+[       OK ] FredkinCell.agen4 (4 ms)
 [ RUN      ] FredkinCell.agen5
-[       OK ] FredkinCell.agen5 (3 ms)
+[       OK ] FredkinCell.agen5 (4 ms)
 [ RUN      ] FredkinCell.agen6
-[       OK ] FredkinCell.agen6 (3 ms)
+[       OK ] FredkinCell.agen6 (4 ms)
 [ RUN      ] FredkinCell.agen7
-[       OK ] FredkinCell.agen7 (4 ms)
+[       OK ] FredkinCell.agen7 (3 ms)
 [ RUN      ] FredkinCell.agen8
 [       OK ] FredkinCell.agen8 (3 ms)
 [ RUN      ] FredkinCell.agen9
 [       OK ] FredkinCell.agen9 (3 ms)
 [ RUN      ] FredkinCell.agen10
-[       OK ] FredkinCell.agen10 (3 ms)
+[       OK ] FredkinCell.agen10 (5 ms)
 [ RUN      ] FredkinCell.out1
-[       OK ] FredkinCell.out1 (4 ms)
+[       OK ] FredkinCell.out1 (7 ms)
 [ RUN      ] FredkinCell.out2
 [       OK ] FredkinCell.out2 (7 ms)
 [ RUN      ] FredkinCell.out3
-[       OK ] FredkinCell.out3 (4 ms)
+[       OK ] FredkinCell.out3 (5 ms)
 [ RUN      ] FredkinCell.eq1
-[       OK ] FredkinCell.eq1 (5 ms)
+[       OK ] FredkinCell.eq1 (6 ms)
 [ RUN      ] FredkinCell.eq2
 [       OK ] FredkinCell.eq2 (4 ms)
 [ RUN      ] FredkinCell.eq3
@@ -109,120 +109,120 @@ Running main() from gtest_main.cc
 [ RUN      ] FredkinCell.eq4
 [       OK ] FredkinCell.eq4 (4 ms)
 [ RUN      ] FredkinCell.ne1
-[       OK ] FredkinCell.ne1 (4 ms)
+[       OK ] FredkinCell.ne1 (5 ms)
 [ RUN      ] FredkinCell.ne2
-[       OK ] FredkinCell.ne2 (4 ms)
+[       OK ] FredkinCell.ne2 (6 ms)
 [ RUN      ] FredkinCell.ne3
-[       OK ] FredkinCell.ne3 (4 ms)
+[       OK ] FredkinCell.ne3 (5 ms)
 [ RUN      ] FredkinCell.ne4
 [       OK ] FredkinCell.ne4 (4 ms)
-[----------] 27 tests from FredkinCell (99 ms total)
+[----------] 27 tests from FredkinCell (119 ms total)
 
 [----------] 45 tests from Cell
 [ RUN      ] Cell.live1
-[       OK ] Cell.live1 (2 ms)
+[       OK ] Cell.live1 (3 ms)
 [ RUN      ] Cell.live2
-[       OK ] Cell.live2 (2 ms)
+[       OK ] Cell.live2 (3 ms)
 [ RUN      ] Cell.live3
 [       OK ] Cell.live3 (3 ms)
 [ RUN      ] Cell.live4
-[       OK ] Cell.live4 (2 ms)
+[       OK ] Cell.live4 (3 ms)
 [ RUN      ] Cell.live5
-[       OK ] Cell.live5 (2 ms)
+[       OK ] Cell.live5 (4 ms)
 [ RUN      ] Cell.live6
 [       OK ] Cell.live6 (3 ms)
 [ RUN      ] Cell.copy1
 [       OK ] Cell.copy1 (4 ms)
 [ RUN      ] Cell.copy2
-[       OK ] Cell.copy2 (3 ms)
+[       OK ] Cell.copy2 (4 ms)
 [ RUN      ] Cell.copy3
-[       OK ] Cell.copy3 (3 ms)
+[       OK ] Cell.copy3 (5 ms)
 [ RUN      ] Cell.copy4
-[       OK ] Cell.copy4 (4 ms)
+[       OK ] Cell.copy4 (5 ms)
 [ RUN      ] Cell.copy5
 [       OK ] Cell.copy5 (4 ms)
 [ RUN      ] Cell.copy6
 [       OK ] Cell.copy6 (4 ms)
 [ RUN      ] Cell.agen_conway1
-[       OK ] Cell.agen_conway1 (3 ms)
+[       OK ] Cell.agen_conway1 (4 ms)
 [ RUN      ] Cell.agen_conway2
-[       OK ] Cell.agen_conway2 (3 ms)
+[       OK ] Cell.agen_conway2 (4 ms)
 [ RUN      ] Cell.agen_conway3
-[       OK ] Cell.agen_conway3 (4 ms)
+[       OK ] Cell.agen_conway3 (5 ms)
 [ RUN      ] Cell.agen_conway4
-[       OK ] Cell.agen_conway4 (3 ms)
+[       OK ] Cell.agen_conway4 (6 ms)
 [ RUN      ] Cell.agen_conway5
-[       OK ] Cell.agen_conway5 (4 ms)
+[       OK ] Cell.agen_conway5 (3 ms)
 [ RUN      ] Cell.agen_conway6
-[       OK ] Cell.agen_conway6 (4 ms)
+[       OK ] Cell.agen_conway6 (3 ms)
 [ RUN      ] Cell.agen_conway7
-[       OK ] Cell.agen_conway7 (3 ms)
+[       OK ] Cell.agen_conway7 (4 ms)
 [ RUN      ] Cell.agen_conway8
-[       OK ] Cell.agen_conway8 (4 ms)
+[       OK ] Cell.agen_conway8 (5 ms)
 [ RUN      ] Cell.agen_conway9
-[       OK ] Cell.agen_conway9 (3 ms)
+[       OK ] Cell.agen_conway9 (5 ms)
 [ RUN      ] Cell.agen_conway10
 [       OK ] Cell.agen_conway10 (4 ms)
 [ RUN      ] Cell.agen_fredkin1
 [       OK ] Cell.agen_fredkin1 (4 ms)
 [ RUN      ] Cell.agen_fredkin2
-[       OK ] Cell.agen_fredkin2 (3 ms)
+[       OK ] Cell.agen_fredkin2 (4 ms)
 [ RUN      ] Cell.agen_fredkin3
 [       OK ] Cell.agen_fredkin3 (4 ms)
 [ RUN      ] Cell.agen_fredkin4
 [       OK ] Cell.agen_fredkin4 (3 ms)
 [ RUN      ] Cell.agen_fredkin5
-[       OK ] Cell.agen_fredkin5 (3 ms)
+[       OK ] Cell.agen_fredkin5 (4 ms)
 [ RUN      ] Cell.agen_fredkin6
 [       OK ] Cell.agen_fredkin6 (4 ms)
 [ RUN      ] Cell.agen_fredkin7
-[       OK ] Cell.agen_fredkin7 (3 ms)
+[       OK ] Cell.agen_fredkin7 (4 ms)
 [ RUN      ] Cell.agen_fredkin8
-[       OK ] Cell.agen_fredkin8 (4 ms)
+[       OK ] Cell.agen_fredkin8 (3 ms)
 [ RUN      ] Cell.agen_fredkin9
-[       OK ] Cell.agen_fredkin9 (3 ms)
+[       OK ] Cell.agen_fredkin9 (5 ms)
 [ RUN      ] Cell.agen_fredkin10
-[       OK ] Cell.agen_fredkin10 (3 ms)
+[       OK ] Cell.agen_fredkin10 (4 ms)
 [ RUN      ] Cell.out_conway1
-[       OK ] Cell.out_conway1 (4 ms)
+[       OK ] Cell.out_conway1 (5 ms)
 [ RUN      ] Cell.out_conway2
 [       OK ] Cell.out_conway2 (4 ms)
 [ RUN      ] Cell.out_fredkin1
-[       OK ] Cell.out_fredkin1 (4 ms)
+[       OK ] Cell.out_fredkin1 (5 ms)
 [ RUN      ] Cell.out_fredkin2
-[       OK ] Cell.out_fredkin2 (3 ms)
+[       OK ] Cell.out_fredkin2 (4 ms)
 [ RUN      ] Cell.out_fredkin3
 [       OK ] Cell.out_fredkin3 (4 ms)
 [ RUN      ] Cell.eq1
-[       OK ] Cell.eq1 (5 ms)
+[       OK ] Cell.eq1 (6 ms)
 [ RUN      ] Cell.eq2
-[       OK ] Cell.eq2 (4 ms)
+[       OK ] Cell.eq2 (6 ms)
 [ RUN      ] Cell.eq3
 [       OK ] Cell.eq3 (5 ms)
 [ RUN      ] Cell.eq4
-[       OK ] Cell.eq4 (5 ms)
+[       OK ] Cell.eq4 (4 ms)
 [ RUN      ] Cell.ne1
 [       OK ] Cell.ne1 (5 ms)
 [ RUN      ] Cell.ne2
-[       OK ] Cell.ne2 (4 ms)
+[       OK ] Cell.ne2 (5 ms)
 [ RUN      ] Cell.ne3
-[       OK ] Cell.ne3 (5 ms)
+[       OK ] Cell.ne3 (6 ms)
 [ RUN      ] Cell.ne4
 [       OK ] Cell.ne4 (5 ms)
-[----------] 45 tests from Cell (170 ms total)
+[----------] 45 tests from Cell (203 ms total)
 
 [----------] Global test environment tear-down
-[==========] 98 tests from 3 test cases ran. (412 ms total)
+[==========] 98 tests from 3 test cases ran. (491 ms total)
 [  PASSED  ] 98 tests.
-==11344== 
-==11344== HEAP SUMMARY:
-==11344==     in use at exit: 0 bytes in 0 blocks
-==11344==   total heap usage: 3,651 allocs, 3,651 frees, 263,134 bytes allocated
-==11344== 
-==11344== All heap blocks were freed -- no leaks are possible
-==11344== 
-==11344== For counts of detected and suppressed errors, rerun with: -v
-==11344== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+==14829== 
+==14829== HEAP SUMMARY:
+==14829==     in use at exit: 0 bytes in 0 blocks
+==14829==   total heap usage: 3,651 allocs, 3,651 frees, 263,137 bytes allocated
+==14829== 
+==14829== All heap blocks were freed -- no leaks are possible
+==14829== 
+==14829== For counts of detected and suppressed errors, rerun with: -v
+==14829== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
 File 'Life.h'
 Lines executed:1.82% of 55
 Branches executed:8.00% of 50
