@@ -16,3 +16,8 @@
 #ignore binary
 RunLife
 TestLife
+
+#ignore doxyfile, latex directory
+Doxyfile
+latex/*
+
